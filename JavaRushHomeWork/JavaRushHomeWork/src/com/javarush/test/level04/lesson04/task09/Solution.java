@@ -23,7 +23,16 @@ public class Solution
 {
     public static void main(String[] args) throws Exception
     {
-        //напишите тут ваш код
-
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String t = reader.readLine();
+        double dT = Double.parseDouble(t);
+        double atom = dT % 5;
+        if (atom < 3) {
+            System.out.println("зеленый");
+        } else if ((atom >= 3) && (atom < 4)){
+            System.out.println("желтый");
+        } else if ((atom >= 4) && (atom < 5)) {
+            System.out.println("красный");
+        }
     }
 }

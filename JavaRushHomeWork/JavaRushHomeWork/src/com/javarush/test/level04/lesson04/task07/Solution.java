@@ -16,7 +16,16 @@ public class Solution
 {
     public static void main(String[] args) throws Exception
     {
-        //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String age = reader.readLine();
+        int nAge = Integer.parseInt(age);
+        int year = 0;
 
+        if ((nAge % 4 == 0) && ((nAge % 400 == 0) || (nAge % 100 != 0))) {
+            year = 366;
+        } else {
+            year = 365;
+        }
+        System.out.println("количество дней в году: " + year);
     }
 }
