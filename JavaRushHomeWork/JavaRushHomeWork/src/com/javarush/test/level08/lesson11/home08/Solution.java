@@ -29,6 +29,20 @@ public class Solution
 
     public static void sort(int[] array)
     {
-        //напишите тут ваш код
+        int max;
+        int temp;
+        for (int i = 0; i < array.length; i++)
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                max = array[j];
+                if (max < array[i]){
+                    temp = max;
+                    max = array[i];
+                    array[i] = temp;
+                }
+                array[j] = max;
+            }
+        }
     }
 }

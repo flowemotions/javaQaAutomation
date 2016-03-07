@@ -7,7 +7,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Dog dog1 = new Dog("Maylo", 10, 5);
-		Dog dog2 = new Dog("Jerry-Lee", 3, 9);
+		Dog dog2 = new Dog("Jerry-Lee", 6, 9);
 		Dog dog3 = new Dog("Frank", 4, 7);
 		Dog dog4 = new Dog("Scooby Doo", 6, 8);
 		Dog dog5 = new Dog("Rex", 8, 6);
@@ -44,7 +44,7 @@ public class Main {
 		//bubble sorting of ArrayList
 		for (int i = 0; i < arrayList.size() - 1; i++) {
 			for (int j = 0; j < arrayList.size() - 1 - i; j++) {
-				if (arrayList.get(j).getAge() < arrayList.get(j + 1).getAge()) {
+				if (arrayList.get(j).getPoints() < arrayList.get(j + 1).getPoints()) {
 					Dog temp = arrayList.get(j);
 					arrayList.set(j, arrayList.get(j + 1));
 					arrayList.set(j + 1, temp);
@@ -52,21 +52,20 @@ public class Main {
 			}
 		}
 		//init HashMap
-		int placeCounter = 1; //variable for place counter
 		HashMap<String, Dog> hashMap = new HashMap<String, Dog>();
 		//add sorted Dog into HashMap according to place
 		for (int i = 0; i < arrayList.size(); i++){
-			hashMap.put(placeCounter++ + " место", arrayList.get(i));
+			hashMap.put(i + 1 + " место", arrayList.get(i));
 		}
 		return hashMap;
 	}
 	
 	//method prints final results
 	public static void printWinners(HashMap<String, Dog> map){
-		System.out.println("1 место занял - " + map.get("1 место").getName() + " с общим количеством очков - " + map.get("1 место").getPoints());
-		System.out.println("2 место занял - " + map.get("2 место").getName() + " с общим количеством очков - " + map.get("2 место").getPoints());
-		System.out.println("3 место занял - " + map.get("3 место").getName() + " с общим количеством очков - " + map.get("3 место").getPoints());
-		System.out.println("4 место занял - " + map.get("4 место").getName() + " с общим количеством очков - " + map.get("4 место").getPoints());
-		System.out.println("5 место занял - " + map.get("5 место").getName() + " с общим количеством очков - " + map.get("5 место").getPoints());
+		String placeKey;
+		for (int i = 0; i < map.size(); i++){
+			placeKey = i + 1 + " место";
+			System.out.println(placeKey + " занял - " + map.get(placeKey).getName() + " с общим количеством очков - " + map.get(placeKey).getPoints());
+		}
 	}
 }
