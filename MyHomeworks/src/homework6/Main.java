@@ -31,6 +31,8 @@ public class Main {
 		printWinners(winnersMap);
 	}
 
+
+
 	//method calculates points and return table of final results
 	public static HashMap<String, Dog> getMapOfWinners(Dog dog1, Dog dog2, Dog dog3, Dog dog4, Dog dog5) {
 		//init ArrayList of competitors

@@ -2,6 +2,7 @@ package com.javarush.test.level09.lesson11.home04;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -12,13 +13,29 @@ import java.util.Locale;
 Воспользоваться объектом Date и SimpleDateFormat.
 */
 
-public class Solution {
+public class Solution
+{
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception
+    {
         //напишите тут ваш код
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        Date date = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat();
-        simpleDateFormat.parse(String.valueOf(reader));
+        //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMMM d, yyyy", myDateFormatSymbols);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM d, yyyy", Locale.ENGLISH);
+        String strTime = simpleDateFormat.format(new Date(reader.readLine()));
+        System.out.println(strTime.toUpperCase());
     }
+
+    /*private static DateFormatSymbols myDateFormatSymbols = new DateFormatSymbols()
+    {
+
+        @Override
+        public String[] getMonths()
+        {
+            return new String[]{"JAN", "FEB", "MAR", "APR", "MAY", "JUN",
+                    "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"};
+        }
+    };*/
+
+
 }
